@@ -1,0 +1,29 @@
+version: 1
+applications:
+  - appRoot: app/web
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm ci --prefix ../..
+            - npm run build --workspace=web --prefix ../..
+        build:
+          commands: []
+      artifacts:
+        baseDirectory: dist
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
+          - ../node_modules/**/*
+          - ../../node_modules/**/*
+      customHeaders:
+        - pattern: '**/*'
+          headers:
+            - key: Cache-Control
+              value: 'public, max-age=31536000, immutable'
+        - pattern: 'index.html'
+          headers:
+            - key: Cache-Control
+              value: 'no-cache'

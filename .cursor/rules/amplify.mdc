@@ -1,0 +1,24 @@
+---
+description: Amplify is configured in shared; apps use services without knowing infra
+alwaysApply: true
+---
+
+# Amplify in this project
+
+All Amplify configuration and infra knowledge lives in **app/shared/amplify/**. Web and mobile apps use shared APIs only; they must not reference Amplify, `amplify_outputs.json`, or `aws-amplify` in code or as a direct dependency.
+
+## Adding or using an Amplify service
+
+1. **Config and client in shared** – Put the adapter (or store) in `app/shared/amplify/`. Use static `import outputs from '../../../amplify_outputs.json'` and `import type { Schema } from '../../../amplify/data/resource'`. Configure once on first use: `Amplify.configure(outputs)` then create the client (e.g. `generateClient<Schema>()`), guarded by a `configured` flag.
+2. **Expose a domain API** – Export functions or hooks from shared (e.g. `getCounter`, `useCounter`). Optionally re-export from `app-domain` for consumers that use domain.
+3. **Apps consume the API only** – In web/mobile, import from `app-shared` or `app-domain` (e.g. `useCounter()`). No `Amplify.configure()`, no fetch of config, no `aws-amplify` in app `package.json`.
+4. **Web build** – Keep the Vite alias in `app/web/vite.config.ts` so `../../../amplify_outputs.json` resolves to repo-root; no other web-specific Amplify code.
+5. **Mobile build** – Keep `app/mobile/metro.config.js` with `resolver.resolveRequest` for `../../../amplify_outputs.json` and `../../../amplify/data/resource` → repo root, and `watchFolders: [repoRoot]`.
+
+## Apps must not
+
+- Call `Amplify.configure()` or fetch `/amplify_outputs.json`.
+- Add `aws-amplify` as a direct dependency (it comes via `app-shared`).
+- Mention Amplify in app source (including comments).
+
+Full setup and troubleshooting: see **docs/AMPLIFY_SHARED_CONFIG.md**.

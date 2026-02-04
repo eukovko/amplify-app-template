@@ -1,0 +1,6 @@
+---
+description: Style rules for the project
+alwaysApply: true
+---
+
+Don't use comments. Write clear, self-documenting code instead.

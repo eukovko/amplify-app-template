@@ -40,7 +40,15 @@ yarn-error.*
 /ios
 /android
 
+# Firebase (project selection; scripts write this)
+.firebaserc
+.fcm-app-id
+firebase-debug.log
+.fcm-state.json
+*-firebase-adminsdk-*.json
+
 # amplify
 .amplify
 amplify_outputs*
+!amplify_outputs.stub.json
 amplifyconfiguration*

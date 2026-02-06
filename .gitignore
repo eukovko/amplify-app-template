@@ -50,5 +50,6 @@ firebase-debug.log
 # amplify
 .amplify
 amplify_outputs*
+!/amplify_outputs.json
 !amplify_outputs.stub.json
 amplifyconfiguration*

@@ -1,1 +1,15 @@
-{"name":"app-shared","version":"1.0.0","private":true,"main":"index.ts","types":"index.ts","exports":{".":"./index.ts"},"dependencies":{"react":"^19.0.0"}}
+{
+  "name": "app-shared",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.ts",
+  "types": "index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "dependencies": {
+    "app-domain": "*",
+    "aws-amplify": "^6.0.0",
+    "react": "^19.0.0"
+  }
+}

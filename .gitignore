@@ -52,3 +52,5 @@ firebase-debug.log
 amplify_outputs*
 !/amplify_outputs.json
 amplifyconfiguration*
+
+.docs/

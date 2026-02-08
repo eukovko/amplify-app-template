@@ -22,8 +22,7 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.example.app",
-      "googleServicesFile": "./google-services.json"
+      "package": "com.example.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"

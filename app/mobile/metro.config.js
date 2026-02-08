@@ -9,6 +9,11 @@ const config = getDefaultConfig(projectRoot);
 const watchFolders = [repoRoot, projectRoot];
 config.watchFolders = [...new Set(watchFolders)];
 
+config.resolver.nodeModulesPaths = [
+  path.join(projectRoot, 'node_modules'),
+  path.join(repoRoot, 'node_modules'),
+];
+
 config.resolver.resolveRequest = (context, moduleName, platform) => {
   if (moduleName === '../../../amplify_outputs.json') {
     return {

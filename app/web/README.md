@@ -2,18 +2,6 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Backend data storage (counter)
-
-The counter is persisted in Amplify Data (AppStorage, guest access) and shared across web and mobile. The app loads the value on open and writes changes back; there is no real-time sync.
-
-To run the app with the backend:
-
-1. From the repo root, run `npx ampx sandbox` to deploy and generate `amplify_outputs.json`.
-2. For web: copy `amplify_outputs.json` to `app/web/public/` so the app can fetch it at `/amplify_outputs.json`. Then start the app.
-3. For mobile: ensure `amplify_outputs.json` is at the repo root so the mobile app can load it at runtime.
-
-Without the config file, the app still builds and runs; the counter will show 0 and persist/sync will not work until the backend is configured.
-
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh

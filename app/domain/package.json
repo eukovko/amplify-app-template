@@ -1,14 +1,1 @@
-{
-  "name": "app-domain",
-  "version": "1.0.0",
-  "private": true,
-  "main": "index.ts",
-  "types": "index.ts",
-  "exports": {
-    ".": "./index.ts",
-    "./*": "./*"
-  },
-  "dependencies": {
-    "app-shared": "*"
-  }
-}
+{"name":"app-domain","version":"1.0.0","private":true,"main":"index.ts","types":"index.ts","exports":{".":"./index.ts","./*":"./*"},"dependencies":{}}

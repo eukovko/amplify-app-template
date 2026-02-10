@@ -9,6 +9,7 @@
     "app/shared"
   ],
   "scripts": {
+    "sandbox": "npm install && ampx sandbox",
     "web:dev": "npm run dev --workspace=web",
     "web:build": "npm run build --workspace=web",
     "mobile:start": "npm run start --workspace=mobile",

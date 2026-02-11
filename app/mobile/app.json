@@ -31,6 +31,9 @@
       "eas": {
         "projectId": "a3939c6f-a6a1-459f-8814-27a89509f7b4"
       }
-    }
+    },
+    "plugins": [
+      "./plugins/withMonorepoReactNative"
+    ]
   }
 }
